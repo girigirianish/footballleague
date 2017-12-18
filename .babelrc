@@ -1,0 +1,8 @@
+{
+  "presets": ["airbnb", "es2015", "react"],
+  "env": {
+    "development": {
+      "presets": []
+    }
+  }
+}
