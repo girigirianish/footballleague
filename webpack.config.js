@@ -24,28 +24,16 @@ module.exports = {
         test: /\.css$/,
         loader: "style-loader!css-loader"
       }, {
-        test: /\.png$/,
-        loader: "url-loader"
-      }, {
-        test: /\.jpg$/,
-        loader: "file-loader"
-      }, {
-        test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
-        loader: "url-loader"
-      }, {
-        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-        loader: "url-loader"
-      }, {
-        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-        loader: "file-loader"
-      }, {
-        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-        loader: "url-loader"
+        test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+        loader: "url-loader",
+        options: {
+          limit: 10000
+        }
       }
     ]
   },
   output: {
-    path: path.join(__dirname, buildFolder, "js"),
+    path: path.join(__dirname, buildFolder),
     filename: "js/bundle.min.js"
   },
   externals: {

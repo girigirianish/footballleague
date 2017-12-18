@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack",
-    "start": "webpack-dev-server",
-    "test": "mocha --compilers js:babel-register -w test/helpers/browser.js test/**/*.spec.js"
+    "dev": "webpack-dev-server",
+    "start": "node server.js",
+    "test":
+      "mocha --compilers js:babel-register -w test/helpers/browser.js test/**/*.spec.js"
   },
   "license": "ISC",
   "dependencies": {
