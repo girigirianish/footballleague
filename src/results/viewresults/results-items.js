@@ -1,5 +1,5 @@
 import React from "react";
-// require("./results-items.css");
+require("./results-items.css");
 
 const styles = {
     winning: "winning",
