@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import {bindActionCreaters} from "redux";
 import {connect} from "react-redux";
+
 import LeagueTable from "./league-table";
 import LeagueSelector from "./league-selector";
 

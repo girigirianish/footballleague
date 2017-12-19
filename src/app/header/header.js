@@ -7,18 +7,20 @@ const Header = () => {
         <div className="pannel pannel-default">
             <div className="panel-body">
                 <div className="row">
-                    <div className="col-sm-4">
-                        <Button>
-                            <Link to="/">Result</Link>
-                        </Button>
+                    <div className="col-sm-5 text-left">
+                        <Link to="/">
+                            <Button>Result</Button>
+                        </Link>
                     </div>
-                    <div className="col-sm-4 pull-left">
-                        <Button>
-                            <Link to="/addresult">New Result</Link>
-                        </Button>
+                    <div className="col-sm-2 text-center">
+                        <Link to="/addresults">
+                            <Button>New Result</Button>
+                        </Link>
                     </div>
-                    <div className="col-sm-4">
-                        <Button>Table</Button>
+                    <div className="col-sm-5 pull-right">
+                        <Link to="/viewleague" className="pull-right">
+                            <Button>Table</Button>
+                        </Link>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,5 @@
 import React from "react";
-import ViewResultsHelpers from "./view-results-helpers";
-require("./results-items.css");
+// require("./results-items.css");
 
 const styles = {
     winning: "winning",
@@ -8,44 +7,45 @@ const styles = {
 };
 
 const createResultBlock = props => {
-    let uniqueResultDates = ViewResultsHelpers.getUniqueResults(props.results, "date");
-    return uniqueResultDates.map((resultdate, key) => {
-        let filteredResults = ViewResultsHelpers.filterResultsDateWise(props.results, resultdate);
+    let currentResultData = props.results;
+    return currentResultData.map((currentResult, key) => {
         return (
-            <div className="panel panel-default" key={key}>
+            <div className="panel panel-default resultblocks" key={key}>
                 <div className="panel-body">
                     <div className="pannel pannel-default">
                         <div className="row ">
-                            <div className="col-sm-12">{resultdate}</div>
+                            <div className="col-sm-12">{currentResult.date}</div>
                         </div>
 
-                        {filteredResults.map((filteredResult, key) => {
-                            return (
-                                <div className="row" key={key}>
-                                    <div className="media">
-                                        <div className="media-body">
-                                            <div className="col-sm-5">
-                                                <span
-                                                    className={parseInt(filteredResult.scorea) > parseInt(filteredResult.scoreb)
-                                                    ? styles.winning
-                                                    : styles.loosing}>
-                                                    {filteredResult.teamnamea + " (" + filteredResult.scorea + ")"}
-                                                </span>
-                                            </div>
-                                            <div className="col-sm-2">{"vs"}</div>
-                                            <div className="col-sm-5">
-                                                <span
-                                                    className={parseInt(filteredResult.scoreb) > parseInt(filteredResult.scorea)
-                                                    ? styles.winning
-                                                    : styles.loosing}>
-                                                    {filteredResult.teamnameb + " (" + filteredResult.scoreb + ")"}
-                                                </span>
+                        {currentResult
+                            .teams
+                            .map((team, key) => {
+                                return (
+                                    <div className="row teamblock" key={key}>
+                                        <div className="media">
+                                            <div className="media-body">
+                                                <div className="col-sm-5">
+                                                    <span
+                                                        className={parseInt(team.scorea) > parseInt(team.scoreb)
+                                                        ? styles.winning
+                                                        : styles.loosing}>
+                                                        {team.teamnamea + " (" + team.scorea + ")"}
+                                                    </span>
+                                                </div>
+                                                <div className="col-sm-2">{"vs"}</div>
+                                                <div className="col-sm-5">
+                                                    <span
+                                                        className={parseInt(team.scoreb) > parseInt(team.scorea)
+                                                        ? styles.winning
+                                                        : styles.loosing}>
+                                                        {team.teamnameb + " (" + team.scoreb + ")"}
+                                                    </span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            );
-                        })}
+                                );
+                            })}
                     </div>
                 </div>
             </div>

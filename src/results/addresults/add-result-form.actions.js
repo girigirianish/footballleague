@@ -2,7 +2,6 @@ import {ADD_RESULT} from "./add-result-constant";
 import {reset} from "redux-form";
 
 export const addResults = () => {
-    console.log("here am i");
     return (dispatch, getState) => {
         const form = getState().form;
         const newResults = {
