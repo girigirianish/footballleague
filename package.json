@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "webpack-dev-server",
     "start": "node server.js",
-    "test": "mocha --compilers js:babel-register -w test/helpers/browser.js test/**/*.spec.js"
+    "test":
+      "mocha --compilers js:babel-register -w test/helpers/browser.js test/**/*.spec.js",
+    "build": "webpack"
   },
   "license": "ISC",
   "dependencies": {
