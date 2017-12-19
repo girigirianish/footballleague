@@ -107,13 +107,14 @@ const AddResultsForm = props => {
                             <div className="col-sm-6"/>
                         </div>
                         <div className="row">
-                            <div className="col-sm-6">
-                                <div className="inputText text-center panel-relative">
-                                    <button type="submit" disabled={submitting} className="btn btn-primary">
-                                        Enter Results
-                                    </button>
-                                </div>
+                            <div className="col-sm-3 text-left"/>
+                            <div className="col-sm-5 ">
+                                <button type="submit" disabled={submitting} className="btn btn-primary">
+                                    Enter Results
+                                </button>
                             </div>
+                            <div className="col-sm-4 pull-right"/>
+
                             <div className="col-sm-6"/>
                         </div>
                     </form>
